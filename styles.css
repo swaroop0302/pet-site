@@ -1,0 +1,145 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 100%;
+    background-position: center;
+}
+
+h2 {
+    font-size: 30px;
+    color: #f67708;
+    margin: 0;
+}
+
+.subheading {
+    font-size: 14px;
+    color: #6D6D6D;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 12px;
+    color: #333;
+}
+
+a {
+    color: #ff9408;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Login container styling */
+.login-container {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Left box styling */
+.login-box {
+    padding: 40px;
+    width: 60%;
+    background-color: #ffffff;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #fdae48;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1D3557;
+}
+
+/* Remember me and forgot password */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    background-color: #fc7804;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ed960a;
+}
+
+/* Right image container */
+.image-container {
+    width: 80%;
+    background-color: #F1FAEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px;
+    background-color: #1D3557;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(29, 53, 87, 0.2);
+    font-size: 16px;
+    gap: 8px;
+}
+
+.back-btn:hover {
+    background-color: #457B9D;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(29, 53, 87, 0.3);
+}
+
+.back-btn .btn-icon {
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.back-btn:hover .btn-icon {
+    transform: scale(1.1);
+}

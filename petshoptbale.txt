@@ -1,0 +1,159 @@
+CREATE TABLE `registor` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(225) NOT NULL,
+  `email` varchar(225) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `confirm_password` varchar(225) NOT NULL,
+  `phone_no` varchar(10) NOT NULL,
+  `address` varchar(225) NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+CREATE TABLE `orders` (
+  `order_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(225) NOT NULL,
+  `first_name` varchar(225) NOT NULL,
+  `phone_no` varchar(255) NOT NULL,
+  `products` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `total_amount` varchar(225) NOT NULL,
+  `payment_method` varchar(225) NOT NULL,
+  `order_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `order_status` varchar(255) NOT NULL,
+  `payment_status` varchar(255) NOT NULL,
+  PRIMARY KEY (`order_id`)
+) 
+
+CREATE TABLE `adminlogin` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `email` varchar(225) NOT NULL,
+  `password` varchar(225) NOT NULL,
+  PRIMARY KEY (`id`)
+)
+CREATE TABLE IF NOT EXISTS suppliers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    address TEXT NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE products (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(10,2) NOT NULL,
+    stock INT NOT NULL DEFAULT 0,
+    category VARCHAR(50) NOT NULL,
+    image_url VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+catfood
+INSERT INTO products (title, description, price, stock, category, image_url) VALUES
+('Ocean Fish Flower with Milk', 'A delicious and nutritious cat food made with ocean fish and enriched with milk', 15.00, 100, 'CatFood', 'catfood1.jpg'),
+('iTrocitos jugosos', 'Juicy meat chunks in a savory gravy, perfect for pampering your cat. Single-serve 85g pouch', 45.00, 75, 'CatFood', 'catfood2.jpg'),
+('tosqualitiagumuuu', 'Skin & Coat formula for adult cats', 45.00, 50, 'CatFood', 'catfood3.jpg'),
+('NOVO FRAEGO', 'Hairball Care formula', 45.00, 60, 'CatFood', 'catfood4.jpg'),
+('PUREPET', 'Hairball Care formula', 49.00, 30, 'CatFood', 'catfood5.jpg'),
+('HAIR&SKIN', 'For Hair & Skin maintenance', 45.00, 40, 'CatFood', 'catfood6.jpg'),
+('LIGHT WEIGHT', 'Lightweight formula for weight management', 45.00, 25, 'CatFood', 'catfood7.jpg'),
+('PERFECT PORTIONS', 'Convenient multipack with 12 perfectly portioned servings (450g total)', 45.00, 80, 'CatFood', 'catfood8.jpg'),
+('PREMIUM ESPECIAL Golden', 'High-quality premium cat food with exceptional nutrition', 45.00, 45, 'CatFood', 'catfood9.jpg'),
+('NeGaMix', 'Premium daily food for adult cats with balanced nutrition', 45.00, 55, 'CatFood', 'catfood10.jpg'),
+('PURINA ONE NATURAL', 'Digestible formula for sensitive skin and stomachs', 45.00, 35, 'CatFood', 'catfood11.jpg'),
+('Felix Play Tubes', 'Interactive tube treats combining play and nutrition', 45.00, 65, 'CatFood', 'catfood12.jpg'),
+('Dreamies', 'Nutritious cat food treats', 45.00, 90, 'CatFood', 'catfood13.jpg');
+
+
+cattoys
+INSERT INTO products (title, description, price, stock, category, image_url) VALUES
+('Scratcher Ball-Toy', 'Interactive 3-Tier Cat Scratcher Ball Toy, Play & Train, Pet Toy Station', 15.00, 50, 'CatToy', 'cattoy1.jpg'),
+('Cat Teaser Wand Toy', 'Cat teaser toy with Starfish and Jellyfish Attachments', 45.00, 30, 'CatToy', 'cattoy2.jpg'),
+('Burlap Catnip Mice Toys', 'Mice toys for cat', 45.00, 75, 'CatToy', 'cattoy3.jpg'),
+('Fish Cat-Toy', 'Pepoot Cat Toys Fish Plush set for Cats', 45.00, 40, 'CatToy', 'cattoy4.jpg'),
+('Plush Fish Cat Toy with Catnip', '1pc Fish shaped pet plush toy', 49.00, 60, 'CatToy', 'cattoy5.jpg'),
+('Cat Teaser Wand Toy with Feather and Mouse Attachment', 'Whisker City Long-Braided Feather Teaser Cat Toy', 45.00, 25, 'CatToy', 'cattoy6.jpg'),
+('3-Tier Cat Ball Tower Toy', 'Robust play tower for one or more cats balls can be rolled 3 levels', 49.00, 35, 'CatToy', 'product-5.jpg'),
+('Sisal Rope Feather Cat Balls', 'Cat toys made of sisal rope and feathers', 45.00, 50, 'CatToy', 'cattoy7.jpg'),
+('Colorful Mouse in Cage Cat Toy', 'Outgeek 3pcs pet cat toy, multipurpose creative cat interactive toy', 45.00, 45, 'CatToy', 'cattoy8.jpg');
+
+dogfood
+INSERT INTO products (title, description, price, stock, category, image_url) VALUES
+('Hill''s Science Diet Small Bites', 'L''JPAOL', 15.00, 50, 'DogFood', 'dogfood1.jpg'),
+('Hill''s Science Diet Sensitive Stomach & Skin Adult Tender Turkey & Rice Stew', 'For Sensitive Stomach & skin', 45.00, 30, 'DogFood', 'dog food2.jpg'),
+('Wag Salmon & Sweet Potato Recipe', 'Wag Salmon & Sweet potato, Grain free 4lb Bag', 45.00, 40, 'DogFood', 'dog food3.jpg'),
+('URMONA Large Dog Food Mat', 'Pet Mat for large dogs', 45.00, 60, 'DogFood', 'dog food4.jpg'),
+('ProPlan Veterinary HA Hydrolyzed', 'A veterinary-exclusive formula designed for cats with food sensitivities, allergies, or digestive issues', 49.00, 25, 'DogFood', 'product-7.jpg'),
+('Urinary Care c/d', 'A veterinary-formulated diet designed to support urinary tract health in cats. Clinically proven', 45.00, 35, 'DogFood', 'product-8.jpg'),
+('Pedigree 5-Signs of Good Health', 'Complete nutrition for adult dogs', 45.00, 80, 'DogFood', 'dog food7.jpg'),
+('Royal Canin Adult German Shepherd', 'For Adult German Shepherd', 45.00, 45, 'DogFood', 'dog food8.jpg'),
+('Nulo Freestyle Grain-Free Adult Salmon & Peas Recipe', 'Grain-free Salmon & Peas recipe', 45.00, 50, 'DogFood', 'dog food9.jpg'),
+('Veterinary Julianino', 'A specialized veterinary diet formulated to address specific health needs in cats', 49.00, 20, 'DogFood', 'product-1.jpg'),
+('Oodle Foodle Dinner Superfood', 'Super food for the world''s best dog', 45.00, 65, 'DogFood', 'dogfood9.jpg'),
+('Petcurean Sensitivity+Shine', 'Limited Ingredient Diet', 45.00, 40, 'DogFood', 'dog food10.jpg'),
+('Royal Canin MAXI Adult', 'For dogs from 26 to 44kg', 45.00, 30, 'DogFood', 'dogfood11.jpg'),
+('LANDMARK by American Journey', 'Premium dog food formula', 45.00, 55, 'DogFood', 'dogfood12.jpg');
+
+dogtoy
+INSERT INTO products (title, description, price, stock, category, image_url) VALUES
+('JW Pet Hol-ee Roller Dog Toy', 'BNF Interactive dog toys ball', 15.00, 50, 'DogToys', 'dogtoy1.jpg'),
+('Turtle Plush Rope Dog Toy', 'Likely made of soft durable materials', 45.00, 50, 'DogToys', 'dogtoy2.jpg'),
+('Petstages Dental Chew Fish Dog Toy', 'Fundamentals deep freeze fish puppy and dog toy', 45.00, 50, 'DogToys', 'dogtoy3.jpg'),
+('Multi-Knot Rope Tug Toy', 'Adjustable Hamster harness leash and collar', 45.00, 50, 'DogToys', 'dogtoy4.jpg'),
+('Cotton Rope Tug Toy', 'Dog rope toy used for tug of war, fetch', 49.00, 50, 'DogToys', 'dogtoy5.jpg'),
+('Rope Ball Dog Toy with Handle', 'Top knot Tug Large rope dog toy', 45.00, 50, 'DogToys', 'dogtoy6.jpg'),
+('Spiky Rubber Dog Chew Bone', 'Designed to satisfy a dog''s natural urge to chew', 45.00, 50, 'DogToys', 'dogtoy7.jpg'),
+('Tennis Ball Tug Toy', 'Natural and durable chew toy', 45.00, 50, 'DogToys', 'dogtoy8.jpg'),
+('Interactive Dog Feeder Bowl', 'Designed to help dogs eat at a healthier space', 45.00, 50, 'DogToys', 'dogtoy9.jpg'),
+('Food Roller', 'Designed to promote dog''s dental health', 45.00, 50, 'DogToys', 'dogtoy10.jpg'),
+('Petrageous Steel Bowl', 'Stainless Steel Dog Bowl - Bronze copper cat food Dish won''t rust or corrode', 45.00, 50, 'DogToys', 'dogtoy11.jpg'),
+('Dog Chest Belt', 'Reflective No-Pull Dog Harness Adjustable Safety vest for Running', 45.00, 50, 'DogToys', 'dogtoy12.jpg'),
+('Glendan Brush', 'Glendan Dog Brush & Cat Brush-Slicker Pet Grooming Brush', 45.00, 50, 'DogToys', 'dogtoy13.jpg');
+
+supplyment
+INSERT INTO products (title, description, price, stock, category, image_url) VALUES
+('DigoPlus Digestive Powder', 'A specialized digestive support supplement', 15.00, 50, 'Supply', 'supply1.jpg'),
+('Rx Vitamins for Pets Feline Minerals', 'A professional-grade veterinary supplement', 45.00, 50, 'Supply', 'supply2.jpg'),
+('Happy Cow Chocolate', 'A digestive aid supplement designed to help dairy cows', 45.00, 50, 'Supply', 'supply3.jpg'),
+('Vetafarm Essential Vitamins + Minerals Multi', 'Comprehensive liquid formula with balanced vitamin and mineral', 45.00, 50, 'Supply', 'supply4.jpg'),
+('Lithe & Limber Hip & Joint Supplement', 'Veterinary-recommended formula for joint health', 49.00, 50, 'Supply', 'supply5.jpg'),
+('Native Pet Probiotic', 'Probiotic supplement for optimal digestive health', 45.00, 50, 'Supply', 'supply6.jpg'),
+('Fumier de Mouton Sheep Manure Compost', 'Natural organic fertilizer from certified sheep manure', 45.00, 50, 'Supply', 'supply7.jpg'),
+('FloraZone Prebiotics + Probiotics', 'Gut health formula for microflora balance', 45.00, 50, 'Supply', 'supply8.jpg'),
+('Natural Hairball Plus Vitamins & Minerals', 'Dual-action supplement for hairball elimination', 45.00, 50, 'Supply', 'supply9.jpg'),
+('PetLabCo. Probiotic', 'Palatable probiotic for digestive balance', 45.00, 50, 'Supply', 'supply10.jpg'),
+('DoodhGain Forte Mineral Mixture', 'High-performance mineral supplement for livestock', 45.00, 50, 'Supply', 'supply11.jpg'),
+('Avipro Avian Complementary Feed', 'Soluble gut-health supplement for birds', 45.00, 50, 'Supply', 'supply12.jpg'),
+('Active Chews Omega Dog Treats', 'Nutrient-packed supplement in chew form', 45.00, 50, 'Supply', 'supply15.jpg');
+
+medicine
+INSERT INTO products (title, description, price, category, image_url) VALUES
+('Ozloo Digestive Health Probiotic Supplements for Large Breed Dogs', 'formulated probiotic designed specifically for large breed dogs to support optimal gut health', 15.00, 'medicine', 'medicine1.jpg'),
+('Native Pet Allergy Plus Immunity Support.', 'A clean, targeted supplement crafted with 9 key ingredients', 45.00, 'medicine', 'medicine2.jpg'),
+('Lithe & Limber Hip & Joint Supplement', 'A triple-action joint support formula for pets', 45.00, 'medicine', 'medicine3.jpg'),
+('PetNaturals of Vermont Hairball with Omegas 3+6 for Cats', 'A dual-action supplement designed to reduce hairballs', 45.00, 'medicine', 'medicine4.jpg'),
+('Cool PlaqueOff Dental Formula for Cats.', 'A natural, seaweed-based powder formulated to reduce plaque', 49.00, 'medicine', 'medicine5.jpg'),
+('Tomlyn Immune Support Lysine Supplement Powder for Cats.', 'A veterinary-recommended powder designed to strengthen immune function', 45.00, 'medicine', 'medicine6.jpg'),
+('Anicura Natural Skin Therapy Cat Spray.', 'A gentle, plant-based spray formulated to soothe and heal dry', 45.00, 'medicine', 'medicine7.jpg');
+
+birdfood
+INSERT INTO products (title, description, price, category, image_url) VALUES
+('Hartner''s Dried Mealworms', 'A high-protein, nutrient-rich snack for wild birds', 15.00, 'birdfood', 'birdfood1.jpg'),
+('Dumor', 'A complete feed for meat birds', 45.00, 'birdfood', 'birdfood2.jpg'),
+('Purus consequat congue sit', 'A premium feed additive designed to enhance egg production', 45.00, 'birdfood', 'birdfood3.jpg'),
+('Morbi vel arcu scelerisque', 'A nutritionally balanced feed formulated to support optimal development', 45.00, 'birdfood', 'birdfood4.jpg'),
+('Purina Dumor Chick Starter/Grower.', 'A high-protein (20%) complete feed formulated', 49.00, 'birdfood', 'birdfood5.jpg'),
+('FruitBlend with Natural Flavors', 'A flavorful, lickable supplement for pets,', 49.00, 'birdfood', 'product-4.jpg');
+INSERT INTO products (title, description, price, category, image_url) VALUES
+('Wardley Pond Stix.', 'A nutritious, slow-sinking feed', 15.00, 'fishfood', 'fishfood1.jpg'),
+('TetraMin XL Tropical Flakes.', 'A high-quality flake food specially formulated for larger tropical fish', 45.00, 'fishfood', 'fishfood2.jpg'),
+('variety stick', 'Contains 3 types of stick for balanced diet', 45.00, 'fishfood', 'fishfood3.jpg'),
+('TetraMin Tropical Tablets.', 'A nutrient-rich tablet formula designed for bottom-dwelling', 45.00, 'fishfood', 'fishfood4.jpg'),
+('Spirulina Fish Food.', 'A nutrient-dense, plant-based flake food enriched with spirulina algae', 49.00, 'fishfood', 'fishfood5.jpg'),
+('Simm Pellets.', 'A nutritionally balanced pellet food designed for pond fish', 49.00, 'fishfood', 'product-2.jpg'),
+('Wardley.', 'Sinking pellet food', 49.00, 'fishfood', 'product-3.jpg');

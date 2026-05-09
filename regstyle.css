@@ -1,0 +1,195 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-size: 14px;
+     font-family: Arial, sans-serif;
+     background-image: url('log.jpg');
+     background-size: cover;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+
+ .container {
+     background-color: white;
+     width: 500px;
+     padding: 25px;
+     margin: 70px auto 0;
+     border-top: 5px solid rgb(245, 122, 28);
+     box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.5);
+     justify-content: center;
+     align-items: center;
+     height: 640px;
+
+ }
+
+ .container h2 {
+     font-size: 32px;
+     line-height: 24px;
+     padding-bottom: 30px;
+     text-align: center;
+     padding-top: 10px;
+     color: #ff6600;
+ }
+
+ .input-name {
+     /* background-color: rgba(29, 28, 28, 0.6); */
+     /* padding: 40px 50px; */
+     padding: 7px 9px;
+     width: 90%;
+     position: relative;
+     margin: 15px auto;
+     margin-left: 40px;
+ }
+
+ .email {
+     padding: 17px 11px;
+ }
+
+ .lock {
+     padding: 8px 11px;
+ }
+
+ .name {
+     width: 45%;
+     padding: 8px 0 8px 40px;
+ }
+
+ .input-name span {
+     margin-left: 35px;
+ }
+
+ .name {
+     width: 90%;
+     padding: 10px 0 8px 40px;
+
+ }
+
+ .text-name {
+     width: 90%;
+     padding: 8px 0 8px 40px;
+
+ }
+
+ .text-name1 {
+     width: 35%;
+     padding: 8px 0 6px 35px;
+     margin-left: 45px;
+     border: 1px solid #ff7b00;
+ }
+
+ .email {
+     padding: 8px;
+ }
+
+ .input-name i {
+     position: absolute;
+     font-size: 18px;
+     color: #2f1b0f;
+     /* border-right: 1px solid #cccccc; */
+     border-right: 1px solid #ffb84f;
+ }
+
+ .text-name,
+ .name {
+     border: 1px solid #ff7b00;
+     /* border-radius: ; */
+     /* border: 1px solid #cccccc; */
+     outline: none;
+     -webkit-transition: all 0.30s ease-in-out;
+     -moz-transition: all 0.30s ease-in-out;
+     transition: all 0.30s ease-in-out;
+     -ms-transition: all 0.30s ease-in-out;
+ }
+
+ .text-name:hover,
+ .name {
+     background-color: #fafafa;
+ }
+
+ .radio-button {
+     margin-right: 4px;
+ }
+
+ .check-button {
+     margin-right: 15px;
+     position: relative;
+ }
+
+ a {
+     color: #f0880a;
+ }
+
+ input[type="radio"] {
+     accent-color: rgb(50, 14, 209);
+ }
+
+ input[type="checkbox"] {
+     accent-color: rgb(57, 6, 209);
+ }
+
+
+ .signup-btn {
+     background-color: #f87c00;
+     color: white;
+     height: 35px;
+     line-height: 35px;
+     width: 81%;
+     border: none;
+     outline: none;
+     font-size: 16px;
+     cursor: pointer;
+     margin-bottom: 10px;
+     border-radius: 5px;
+     margin-left: 40px;
+ }
+
+ .geo-btn {
+     background-color: #f87c00;
+     color: white;
+     height: 35px;
+     line-height: 35px;
+     width: 40%;
+     border: none;
+     outline: none;
+     font-size: 16px;
+     cursor: pointer;
+     margin-bottom: 10px;
+     border-radius: 5px;
+     margin-left: 150px;
+     margin: 10px;
+ }
+
+ .geo-btn:hover {
+     background: rgb(255, 143, 14);
+ }
+
+ .signup-btn:hover {
+     background: rgb(255, 143, 14);
+ }
+
+ @media (max-width:480px) {
+     .container {
+         width: 100%;
+     }
+
+     .input-name {
+         margin-bottom: -10px;
+     }
+
+     .name {
+         width: 100%;
+         padding: 8px 0 8px 40px;
+         margin-bottom: 10px;
+     }
+
+     .input-name span {
+         padding: 0;
+         margin: 0;
+     }
+ }
